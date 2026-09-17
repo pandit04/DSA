@@ -1,0 +1,17 @@
+def buystock(prices):
+
+    buy=prices[0]
+    profit = 0
+
+    for price in prices:
+        if price < buy:
+            buy = price
+        else:
+            current_profit = price - buy
+            profit = max(profit,current_profit)
+    return profit
+
+prices = [7,1,5,3,6,4]
+print(buystock(prices))
+
+            
