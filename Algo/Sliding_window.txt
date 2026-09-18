@@ -1,0 +1,19 @@
+def sliding_window(arr, k):
+    left = 0
+    window_value = 0
+    result = []
+
+    for right in range(len(arr)):
+        # Add new element
+        window_value += arr[right]
+
+        # Window has reached size k
+        if right - left + 1 == k:
+            # Process current window
+            result.append(window_value)
+
+            # Remove left element
+            window_value -= arr[left]
+            left += 1
+
+    return result
